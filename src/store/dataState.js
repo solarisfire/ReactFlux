@@ -52,7 +52,7 @@ export const categoriesState = computed(
   },
 )
 
-export const hiddenCategoryIdsState = computed(categoriesState, (categories) => {
+const hiddenCategoryIdsState = computed(categoriesState, (categories) => {
   return categories.filter((category) => category.hide_globally).map((category) => category.id)
 })
 

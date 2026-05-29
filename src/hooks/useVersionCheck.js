@@ -3,12 +3,14 @@ import { ofetch } from "ofetch"
 import { useEffect, useState } from "react"
 
 import { dataState } from "@/store/dataState"
+import { settingsState } from "@/store/settingsState"
 import { GITHUB_REPO_PATH, UPDATE_NOTIFICATION_KEY } from "@/utils/constants"
 import { checkIsInLast24Hours, getTimestamp } from "@/utils/date"
 import buildInfo from "@/version-info.json"
 
 function useVersionCheck() {
   const { isAppDataReady } = useStore(dataState)
+  const { checkForUpdates } = useStore(settingsState)
 
   const [hasUpdate, setHasUpdate] = useState(false)
 
@@ -18,7 +20,7 @@ function useVersionCheck() {
   }
 
   useEffect(() => {
-    if (!isAppDataReady || import.meta.env.DEV) {
+    if (!isAppDataReady || import.meta.env.DEV || !checkForUpdates) {
       return
     }
 
@@ -41,9 +43,12 @@ function useVersionCheck() {
     }
 
     checkUpdate()
-  }, [isAppDataReady])
+  }, [checkForUpdates, isAppDataReady])
 
-  return { hasUpdate, dismissUpdate }
+  // When checkForUpdates is off, never report an update regardless of internal state
+  const effectiveHasUpdate = checkForUpdates && hasUpdate
+
+  return { hasUpdate: effectiveHasUpdate, dismissUpdate }
 }
 
 export default useVersionCheck

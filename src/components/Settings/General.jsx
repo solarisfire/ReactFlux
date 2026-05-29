@@ -20,6 +20,7 @@ const languageOptions = [
 const General = () => {
   const { version } = useStore(dataState)
   const {
+    checkForUpdates,
     compactSidebarGroups,
     enableContextMenu,
     enableSwipeGesture,
@@ -261,6 +262,18 @@ const General = () => {
           </SettingItem>
         </>
       )}
+
+      <Divider />
+
+      <SettingItem
+        description={polyglot.t("settings.check_for_updates_description")}
+        title={polyglot.t("settings.check_for_updates_label")}
+      >
+        <Switch
+          checked={checkForUpdates}
+          onChange={(value) => updateSettings({ checkForUpdates: value })}
+        />
+      </SettingItem>
 
       {isBelowMedium && (
         <>

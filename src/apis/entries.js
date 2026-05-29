@@ -41,7 +41,7 @@ const addDateFilters = (orderField, queryParams, filterDate) => {
   }
 }
 
-export const buildEntriesUrl = (baseParams, extraParams = {}) => {
+const buildEntriesUrl = (baseParams, extraParams = {}) => {
   const { baseUrl, orderField, limit, status } = baseParams
   const { filterDate } = contentState.get()
   const orderDirection = getSettings("orderDirection")

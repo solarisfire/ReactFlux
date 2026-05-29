@@ -15,7 +15,7 @@ WORKDIR /app
 COPY package.json pnpm-lock.yaml ./
 
 # Install dependencies using pnpm
-RUN pnpm install --frozen-lockfile
+RUN pnpm install --frozen-lockfile --ignore-scripts
 
 # Copy the rest of the code
 COPY . .
@@ -25,7 +25,7 @@ RUN pnpm run build
 
 # Stage 2: Run the server using Caddy
 # Specify the version for consistency
-FROM caddy:2-alpine
+FROM caddy:2
 
 # Copy built assets from the builder stage
 COPY --from=build /app/build /srv

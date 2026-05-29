@@ -19,7 +19,7 @@ const computeLPSArray = (pattern) => {
 }
 
 // Main KMP search algorithm
-export const kmpSearch = (text, pattern, ignoreCase = true) => {
+const kmpSearch = (text, pattern, ignoreCase = true) => {
   // TODO: Make ignoreCase configurable
   const processedText = ignoreCase ? text.toLowerCase() : text
   const processedPattern = ignoreCase ? pattern.toLowerCase() : pattern
@@ -50,7 +50,7 @@ export const kmpSearch = (text, pattern, ignoreCase = true) => {
 }
 
 // Parse query statement
-export const parseQuery = (query) => {
+const parseQuery = (query) => {
   const includeTerms = []
   const excludeTerms = []
   let exactPhrases = []
@@ -104,7 +104,7 @@ export const parseQuery = (query) => {
   return { includeTerms, excludeTerms, exactPhrases }
 }
 
-export const filterData = (data, query, fields = [], ignoreCase = true) => {
+const filterData = (data, query, fields = [], ignoreCase = true) => {
   const { includeTerms, excludeTerms, exactPhrases } = parseQuery(query)
 
   const checkField = (itemValue) => {

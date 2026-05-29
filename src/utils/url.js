@@ -1,4 +1,4 @@
-export const getHostname = (url) => {
+const getHostname = (url) => {
   const pattern = /^(?:http|https):\/\/((?!(\d+\.){3}\d+)([^/?#]+))/
   const match = url.match(pattern)
   if (match) {
@@ -30,7 +30,7 @@ export const isEntryDetailPath = (pathname) => {
   return /\/entry\/\d+$/.test(pathname)
 }
 
-export const extractEntryIdFromPath = (pathname) => {
+const extractEntryIdFromPath = (pathname) => {
   const match = pathname.match(/\/entry\/(\d+)$/)
   return match ? match[1] : null
 }

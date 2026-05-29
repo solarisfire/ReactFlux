@@ -1,0 +1,3 @@
+{
+  "ignoreDependencies": ["react-compiler-runtime", "rollup-plugin-visualizer"]
+}

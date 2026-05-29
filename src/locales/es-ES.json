@@ -80,8 +80,10 @@
     "saved_to_third-party_services_error": "Error al guardar en servicios de terceros, por favor intente de nuevo más tarde, o verifique la configuración de integración",
     "no_previous_article": "No hay artículo anterior",
     "no_previous_unread_article": "No hay artículo anterior sin leer",
+    "no_previous_category": "No hay categoría anterior",
     "no_next_article": "No hay artículo siguiente",
-    "no_next_unread_article": "No hay artículo siguiente sin leer"
+    "no_next_unread_article": "No hay artículo siguiente sin leer",
+    "no_next_category": "No hay categoría siguiente"
   },
   "article_card": {
     "reading_time": "%{time} de lectura",
@@ -274,7 +276,9 @@
     "skip_mark_all_read_confirmation_label": "Omitir confirmación al marcar todo como leído",
     "skip_mark_all_read_confirmation_description": "Marcar todos los artículos como leídos sin mostrar un diálogo de confirmación",
     "mark_all_read_jump_to_next_label": "Saltar al siguiente no leído después de marcar todo como leído",
-    "mark_all_read_jump_to_next_description": "Navegar automáticamente al siguiente feed o categoría con artículos no leídos después de marcar todo como leído"
+    "mark_all_read_jump_to_next_description": "Navegar automáticamente al siguiente feed o categoría con artículos no leídos después de marcar todo como leído",
+    "check_for_updates_label": "Buscar actualizaciones",
+    "check_for_updates_description": "Mostrar una notificación cuando haya una nueva versión disponible en GitHub"
   },
   "appearance": {
     "theme_color_label": "Color del tema",
@@ -313,8 +317,10 @@
     "exitDetailView": "Salir de la vista del artículo y volver a la lista",
     "fetchOriginalArticle": "Obtener y mostrar el contenido original del artículo actual",
     "navigateToNextArticle": "Navegar al siguiente artículo en la lista",
+    "navigateToNextCategory": "Navegar a la siguiente categoría",
     "navigateToNextUnreadArticle": "Navegar al siguiente artículo no leído en la lista",
     "navigateToPreviousArticle": "Navegar al artículo previo en la lista",
+    "navigateToPreviousCategory": "Navegar a la categoría anterior",
     "navigateToPreviousUnreadArticle": "Navegar al artículo previo no leído en la lista",
     "openLinkExternally": "Abrir el enlace del artículo actual en una nueva pestaña del navegador",
     "openPhotoSlider": "Abrir el control deslizante de fotos para ver todas las imágenes del artículo actual",
